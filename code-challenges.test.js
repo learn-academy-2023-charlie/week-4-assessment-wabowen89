@@ -168,16 +168,26 @@ describe("endTally", () => {
 
 // Pseudo Code:
   // Process:
-    // 
+    // Remove temporary array
+    // Reference each value directly (possible tool: use object key reference)
+    // Subtract objects second value from it's first value
+    // Return on one line
   // Expected Output: 11
                    // -31
 
 const endTally = (object) => {
   
-  let array = Object.values(object)
-  return array[0] - array[1]
+  return object.upVotes - object.downVotes
 
 }
+
+// Success
+// PASS  ./code-challenges.test.js
+// modArray
+//   ✓ removes the first item from the array and shuffles the remaining content. (1 ms)
+// endTally
+//   ✓ takes in an object that contains up votes and down votes and returns the end tally.
+
 
 
 // --------------------3) Create a function that takes in two arrays as arguments and returns one array with no duplicate values. STRETCH: Use the spread operator to pass in a dynamic number of arguments.
