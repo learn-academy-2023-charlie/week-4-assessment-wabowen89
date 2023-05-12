@@ -151,8 +151,9 @@ describe("endTally", () => {
 // b) Create the function that makes the test pass.
 
 // const endTally = (object) => {
-  
+    // Converts object into an array of the objects values and assigns it to the 'array' variable
 //   let array = Object.values(object)
+    // Subtracts the value of the second element in 'array' from the first element and returns the numerical output
 //   return array[0] - array[1]
 
 // }
@@ -177,6 +178,7 @@ describe("endTally", () => {
 
 const endTally = (object) => {
   
+  // References the object values with key. Subtracts second value from the first value
   return object.upVotes - object.downVotes
 
 }
@@ -236,16 +238,21 @@ describe("remDups", () => {
 // b) Create the function that makes the test pass.
 
 // const remDups = (array1, array2) => {
+    // Assigns the value of array1 to the temporary array 'tempArray'
+//   let tempArray = array1
 
-//   let array = array1
-
+    // Iterates through array2
 //   for(let i = 0; i < array2.length; i++) {
+      
+      // Checks to see if current value of array2 is not in array1 
 //     if(!array1.includes(array2[i])) {
-//       array.push(array2[i])
+
+        // Pushes current value of array2 to the tempArray
+//       tempArray.push(array2[i])
 //     }
 //   }
 
-//   return array
+//   return tempArray
 // }
 
 // Success
@@ -257,7 +264,7 @@ describe("remDups", () => {
 // remDups
 //   ✓ takes in two arrays as arguments and returns one array with no duplicate values.
 
-// Refactor
+// Refactor 1
 // Pseudo Code:
   // Process:
     // Remove temporary array
@@ -268,8 +275,11 @@ describe("remDups", () => {
   // Expected Output: ["array", "object", "number", "string", "Boolean", "null", "undefined"]
 
 // const remDups = (array1, array2) => {
-  
+    // Iterates through array2
 //   for(let i = 0; i < array2.length; i++) {
+
+      // Determines that current value in array2 is not in array1 using ternary operator
+      // Adds current value of array2 to array1 using .push()
 //     !array1.includes(array2[i]) ? array1.push(array2[i]) : null
 //   }
 
@@ -297,6 +307,9 @@ describe("remDups", () => {
 
 const remDups = (array1, array2) => {
 
+  // Filters through array2
+  // returns values that are not in array1
+  // Combines array1 with returned array from filter method
   return array1.concat(array2.filter(value => !array1.includes(value)))
 
 }
